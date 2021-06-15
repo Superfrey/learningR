@@ -1,6 +1,6 @@
 TODO: Add more to the title of your project here
 
-# LearningR: Practicing cool stuff 
+# LearningR: Practicing boredom
 
 This is for DDA R course pratice makes perfect............
 And we will try again for another round-
