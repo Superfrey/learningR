@@ -141,3 +141,27 @@ nhanes_small %>%
 nhanes_small %>%
     summarise(med_age = median(age, na.rm = T),
                  med_phys_act = median(phys_active_days, na.rm = T))
+
+#9.18 Exercise: Answer some statistical questions with group by and summarise
+# 1.
+nhanes_small %>%
+    filter(!is.na(diabetes)) %>%
+    ___(___, ___) %>%
+    ___(
+        ___,
+        ___,
+        ___
+    )
+
+# 2.
+nhanes_small %>%
+    filter(!is.na(diabetes)) %>%
+    ___(___, ___) %>%
+    ___(
+        ___,
+        ___,
+        ___,
+        ___,
+        ___,
+        ___
+    )
