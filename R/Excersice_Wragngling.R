@@ -126,3 +126,18 @@ nhanes_modified <- nhanes_small %>% # Specifying dataset
     )
 
 nhanes_modified
+
+# 1.
+nhanes_small %>%
+    summarise(mean_weight = mean(weight, na.rm=T),
+              mean_age = mean(age, na.rm=T))
+
+# 2.
+nhanes_small %>%
+    summarise(max_height = max(height, na.rm=T),
+              min_height = min(height, na.rm= T))
+
+# 3.
+nhanes_small %>%
+    summarise(med_age = median(age, na.rm = T),
+                 med_phys_act = median(phys_active_days, na.rm = T))
