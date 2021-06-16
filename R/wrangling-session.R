@@ -33,3 +33,15 @@ select(NHANES,Age)
 
 select(NHANES,Age,BMI,Height)
 
+##summary statistics by group
+
+nhanes_small %>%
+    summarise(max_bmi= max(bmi, na.rm= T))
+
+table(is.na(nhanes_small$bmi))
+
+# claculating 2 summary statistics
+nhanes_small %>%
+    summarise(max_bmi= max(bmi,na.rm=T),
+              min_bmi = min(bmi, na.rm=T ))
+
