@@ -127,6 +127,9 @@ nhanes_modified <- nhanes_small %>% # Specifying dataset
 
 nhanes_modified
 
+
+# Exerciser 9.16 summary statistics assignments
+
 # 1.
 nhanes_small %>%
     summarise(mean_weight = mean(weight, na.rm=T),
@@ -141,6 +144,7 @@ nhanes_small %>%
 nhanes_small %>%
     summarise(med_age = median(age, na.rm = T),
                  med_phys_act = median(phys_active_days, na.rm = T))
+
 
 #9.18 Exercise: Answer some statistical questions with group by and summarise
 # 1.

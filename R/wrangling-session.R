@@ -40,8 +40,29 @@ nhanes_small %>%
 
 table(is.na(nhanes_small$bmi))
 
-# claculating 2 summary statistics
+# calculating 2 summary statistics
 nhanes_small %>%
     summarise(max_bmi= max(bmi,na.rm=T),
               min_bmi = min(bmi, na.rm=T ))
+
+# calculating summary statistics by group
+
+nhanes_small %>%
+    group_by(diabetes) %>%
+    summarise(mean_age= mean(age, na.rm=T),
+              mean_bmi= mean(bmi, na.rm=T))
+
+
+
+nhanes_small %>%
+    filter(!is.na(diabetes)) %>%
+    group_by(diabetes) %>%
+    summarise(mean_age= mean(age, na.rm=T),
+              mean_bmi= mean(bmi, na.rm=T)) %>%
+    ungroup()
+
+## Saving datasets as files
+
+## Saving daat as an.rda file in the data folder
+usethis::use_data(nhanes_small, overwrite = T)
 
