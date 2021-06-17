@@ -1,0 +1,49 @@
+---
+title: "data_vizualization"
+author: "Jonas Schaarp"
+date: "6/17/2021"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+# loading the packages
+source(here::here("R/package-loading.R"))
+
+#load the tidyed dataset
+load(here::here("data/nhanes_small.rda"))
+```
+
+# One variable plots
+```{r continous-variables}
+#Density plot
+ggplot(nhanes_small, aes( x = bmi)) + 
+    geom_density()
+
+#histogram
+
+ggplot(nhanes_small, aes(x = bmi)) +
+    geom_histogram()
+
+```
+```{r discrete-variables}
+ggplot(nhanes_small, aes (x = sex)) +
+    geom_bar()
+
+ggplot(nhanes_small, aes(x = diabetes)) +
+    geom_bar()
+```
+
+```{r remove-missing-diabetes}
+
+nhanes_tidied <- nhanes_small %>% 
+    filter(!is.na(diabetes))
+
+# Safe the new dataframe overwrite is the old data set
+usethis::use_data(nhanes_tidied, overwrite = T)
+
+ggplot(nhanes_tidied, aes(x= diabetes))+
+    geom_bar()
+```
+
+
